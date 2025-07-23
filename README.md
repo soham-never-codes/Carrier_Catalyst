@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Carrier Catalyst
 
-## Getting Started
+**Carrier Catalyst** is a full-stack AI-powered job recommendation and career assistant platform. It helps users build standout resumes and cover letters, assess their skills through mock interviews and quizzes, and soon—get job recommendations tailored to their profile.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+### 🧠 AI-Powered Tools
+- ✍️ **AI Resume & Cover Letter Generator**
+- 🤖 **Mock Interview Assistant**
+- 📈 **Quiz & Skill Assessment**
+
+### 📄 Resume Builder
+- Form-based and Markdown editor
+- Save, edit, preview, and download as PDF
+
+### 💼 Career Tools
+- Personalized job recommendations (coming soon)
+- Industry-specific templates
+
+### 📊 Analytics & Performance
+- MCQ-based skill quizzes
+- Interview performance chart
+- Insightful user dashboard
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Tech Used                           |
+| ------------ | ----------------------------------- |
+| **Frontend** | React.js, Next.js (App Router), Tailwind CSS, ShadCN/UI |
+| **Backend**  | Node.js, Express.js                 |
+| **Database** | PostgreSQL with Prisma ORM          |
+| **AI**       | OpenAI API                          |
+| **Auth**     | Clerk.dev                           |
+| **Others**   | Inngest (job queues), Sonner (toasts), html2pdf.js |
+
+---
+
+## 🧱 Folder Structure
+carrier-catalyst/
+├── app/
+│ ├── (auth)/ # Auth pages
+│ ├── (main)/ # Main features like resume, interview, etc.
+│ ├── layout.js # App layout
+│ └── page.jsx # Landing page
+├── components/ # UI & Reusable Components
+├── data/ # Static content: FAQs, features, etc.
+├── hooks/ # Custom hooks (e.g., useFetch)
+├── lib/ # Utilities, Prisma, Inngest setup
+├── prisma/ # DB schema and migrations
+├── public/ # Static files (images, logo)
+├── styles/ # Tailwind and custom styles
+├── .env # Environment variables
+└── README.md # You're here!
+
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/soham-never-codes/Carrier_Catalyst.git
+cd Carrier_Catalyst
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Configure Environment Variables
+Create a .env file at the root:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# OpenAI
+```bash
+OPENAI_API_KEY=your-openai-api-key
+```
 
-## Learn More
+# Clerk (Authentication)
+```bash
+CLERK_SECRET_KEY=your-clerk-secret-key
+CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+NEXT_PUBLIC_CLERK_FRONTEND_API=your-clerk-frontend-api
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Database
+```bash
+DATABASE_URL="file:./dev.db"
+```
+Run the Development Server
+```bash
+npm run dev
+```
